@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import UserInput from '../src/Components/UserInput'
 import UserOutput from '../src/Components/UserOutput'
+import ValidationComponent from '../src/Components/ValidationComponent'
 
 class App extends Component {
   constructor(){
@@ -46,8 +47,11 @@ class App extends Component {
           curVal={this.state.username}
         />
         <UserOutput
-          username = {this.state.username}
-          usrname = "Barr"
+          username={this.state.username}
+          usrname="Barr"
+        />
+        <ValidationComponent
+          textLength={this.state.textLength}
         />
       </div>
     )
