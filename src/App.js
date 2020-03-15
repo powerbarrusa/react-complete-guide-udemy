@@ -7,7 +7,8 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      username: "barry"
+      username: "barry",
+      textLength: 0
     }
   }
 
@@ -25,9 +26,20 @@ class App extends Component {
     })
   }
 
+  textListen = (e) => {
+    this.setState({
+      textLength: e.target.value.length
+    })
+  }
+
   render() {
     return (
       <div className="App">
+        <input
+          onChange={this.textListen}
+          type="text"
+        />
+        {this.state.textLength}
         <UserInput
           addNum={this.addNum}
           consoleNum={this.consoleNum}
