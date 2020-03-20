@@ -9,7 +9,8 @@ class App extends Component {
     super()
     this.state = {
       username: "barry",
-      textLength: 0
+      textLength: 0,
+      textAlert: "Test"
     }
   }
 
@@ -33,6 +34,15 @@ class App extends Component {
     })
   }
 
+  lengthAlert = () => {
+    if (this.state.textLength > 5){
+      this.setState({
+        textAlert: "Text too long"
+      })
+    }
+  }
+  
+
   render() {
     return (
       <div className="App">
@@ -52,6 +62,8 @@ class App extends Component {
         />
         <ValidationComponent
           textLength={this.state.textLength}
+          textAlert={this.state.textAlert}
+          lengthAlert={this.lengthAlert}
         />
       </div>
     )

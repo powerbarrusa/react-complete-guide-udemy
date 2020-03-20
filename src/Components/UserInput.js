@@ -8,7 +8,6 @@ const UserInput = (props) => {
         type="text"
         value={props.curVal}
         onChange={props.consoleNum}
-        onClick={() => console.log(props.username)}
       />
       <button onClick={() => console.log("clicked!")}>Click me!</button>
     </div>
